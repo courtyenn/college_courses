@@ -52,19 +52,13 @@ function recursiveCourses(courses){
 	}
 
 	function containsCircularLogic(courses){
-		var test = recursiveCourses(courses).length > 0 ? true : false;
-		return test;
+		return recursiveCourses(courses).length > 0 ? true : false;;
 	}
 
 	function hasPrerequisite(course){
-		// console.log('================== hasPrerequisite() ==================');
 		if(course === undefined || course.prerequisite === undefined) return false;
-		
-		// console.log(course["class"] + " ++++ " + course.prerequisite);
 		return !(course.prerequisite.trim() === "");
 	}
-
-
 	// Requires upper level classes to have a prerequisite of ""
 	function orderPrerequisites(courses){
 		var catalog = [];
@@ -75,8 +69,7 @@ function recursiveCourses(courses){
 		_.each(startingClasses, function(course){
 			catalog.push(course["class"]);
 		});
-		// console.log("startingClasses: ");
-		// console.log(catalog.toString());
+
 		for(var x = 0; x < courses.length; x++){	
 			var tempArray = [];
 			if(catalog.length >= courses.length)break;
@@ -90,8 +83,6 @@ function recursiveCourses(courses){
 			startingClasses = _.filter(courses, function(course){
 				return tempArray.indexOf(course["class"]) >= 0;
 			});
-			// console.log('NEW startingClasses');
-			// console.log(startingClasses);
 		}
 		return catalog;
 	}

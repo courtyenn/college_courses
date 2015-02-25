@@ -29,8 +29,12 @@ describe('collegeCourses', function () {
 
 	it('should have a list of circular logic courses', function(){
 		var count = collegeCourses.recursiveCourses(data.circularData);
-		console.log(count.length);
 		expect(count.length).to.be.above(0);
+	});
+
+	it('should equal the total number of prerequisites in the recursive loop', function(){
+		var count = collegeCourses.recursiveCourses(data.circularData);
+		expect(count.length).to.equal(10);
 	});
 
 	// Test hardcodes order .... TOFIX
