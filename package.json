@@ -1,0 +1,39 @@
+{
+  "name": "college_courses",
+  "version": "1.0.0",
+  "description": "Testing",
+  "main": "gulpfile.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "chai": "^2.1.0",
+    "gulp": "^3.8.11",
+    "jasmine-reporters": "^2.0.4",
+    "gulp-jasmine": "^2.0.0",
+    "karma": "^0.10.10",
+    "karma-firefox-launcher": "^0.1.4",
+    "karma-chrome-launcher": "^0.1.7",
+    "gulp-mocha": "^1.1.2",
+    "karma-jasmine": "^0.1.5",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "karma-html2js-preprocessor": "^0.1.0",
+    "prompt": "^0.2.14"
+  },
+  "devDependencies": {
+    "http-server": "^0.7.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/courtneynguyen/college_courses"
+  },
+  "author": "Courtney Nguyen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/courtneynguyen/college_courses/issues"
+  },
+  "homepage": "https://github.com/courtneynguyen/college_courses"
+}
