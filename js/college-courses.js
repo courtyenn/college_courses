@@ -64,6 +64,38 @@ function recursiveCourses(courses){
 		return !(course.prerequisite.trim() === "");
 	}
 
+
+	// Requires upper level classes to have a prerequisite of ""
+	function orderPrerequisites(courses){
+		var catalog = [];
+		var prerequisite = "";
+		var otherClasses = [];
+
+		var startingClasses = _.where(courses, {"prerequisite": prerequisite});
+		_.each(startingClasses, function(course){
+			catalog.push(course["class"]);
+		});
+		// console.log("startingClasses: ");
+		// console.log(catalog.toString());
+		for(var x = 0; x < courses.length; x++){	
+			var tempArray = [];
+			if(catalog.length >= courses.length)break;
+			_.each(startingClasses, function(course){
+				var classList = _.where(courses, {"prerequisite": course["class"]});
+				_.each(classList, function(oneClass){
+					catalog.push(oneClass["class"]);
+					tempArray.push(oneClass["class"]);
+				});
+			});
+			startingClasses = _.filter(courses, function(course){
+				return tempArray.indexOf(course["class"]) >= 0;
+			});
+			// console.log('NEW startingClasses');
+			// console.log(startingClasses);
+		}
+		return catalog;
+	}
+
 	return {
 		"courseCatalog": this.courseCatalog,
 		"parseClasses": function(classes){
@@ -77,6 +109,9 @@ function recursiveCourses(courses){
 		},
 		"recursiveCourses": function(courses){
 			return recursiveCourses(courses);
+		},
+		"orderPrerequisites": function(courses){
+			return orderPrerequisites(courses);
 		}
 	};
 
