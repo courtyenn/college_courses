@@ -1,26 +1,34 @@
-/*
- * college_courses
- * user/repo
- *
- * Copyright (c) 2015
- * Licensed under the MIT license.
- */
- var prompt = require('prompt');
- 'use strict';
-
- module.exports = function() {
- 	
- 	function onErr(err) {
- 		console.log(err);
- 		return 1;
- 	};
- 	prompt.get(['username', 'email'], function (err, result) {
- 		if (err) { return onErr(err); }
- 		console.log('Command-line input received:');
- 		console.log('  Username: ' + result.username);
- 		console.log('  Email: ' + result.email);
- 	});
+/* Test if classes have spaces or have ""
 
 
- 	return prompt.start();
- };
+*/
+var _ = require('../node_modules/underscore/underscore.js');
+module.exports = (function(){
+	var courseCatalog = [];
+
+	// $('#registration').submit(function(e){
+	// 	var courseList = $('#courses').val();
+	// 	parseClasses(courseList);
+	// 	e.preventDefault();
+	// 	return false;	
+	// });
+
+	function parseClasses(unparsedString){
+		var courses = [];
+
+		_.each(unparsedString, function(course){
+		var colonlessString = course.split(':');
+		courses.push({"class": colonlessString[0].trim(), "prerequisite": colonlessString[1].trim()});
+		});
+
+		return courses;
+	}
+
+	return {
+		"courseCatalog": this.courseCatalog,
+		"parseClasses": function(classes){
+			return parseClasses(classes);
+		}
+	};
+
+})();

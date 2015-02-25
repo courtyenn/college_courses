@@ -1,0 +1,10 @@
+{
+	"unparsedData": ["Calculus: Algebra II","Algebra II: Algebra I","Literature and Composition: Advanced English","Sculpture III: Sculpture II","Welding V: Welding IV"],
+	"parsedData": [
+	{"class": "Calculus", "prerequisite": "Algebra II"},
+	{"class": "Algebra II", "prerequisite": "Algebra I"},
+	{"class": "Literature and Composition", "prerequisite": "Advanced English"},
+	{"class": "Sculpture III", "prerequisite": "Sculpture II"},
+	{"class": "Welding V", "prerequisite": "Welding IV"}
+	]
+}
