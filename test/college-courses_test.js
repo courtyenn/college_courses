@@ -10,9 +10,9 @@ describe('collegeCourses', function () {
   	var courses = collegeCourses.parseClasses(data.unparsedData);
 
     expect(courses[0]).to.have.property('class');
-    expect(courses[0]["class"]).to.equal(data.parsedData[0]["class"]);
-    expect(courses[0]["prerequisite"]).to.equal(data.parsedData[0]["prerequisite"]);
-    expect(courses[3]["prerequisite"]).to.equal(data.parsedData[3]["prerequisite"]);
+    expect(courses[0]["class"]).to.equal(data.parsedData[0]["class"].toLowerCase());
+    expect(courses[0]["prerequisite"]).to.equal(data.parsedData[0]["prerequisite"].toLowerCase());
+    expect(courses[3]["prerequisite"]).to.equal(data.parsedData[3]["prerequisite"].toLowerCase());
   });
 
   it('should test for prerequisites', function(){

@@ -21,7 +21,9 @@
 	{"class": "Sculpture III", "prerequisite": "Sculpture II"},
 	{"class": "Welding V", "prerequisite": "Welding IV"},
 	{"class": "Algebra I", "prerequisite": " "},
-	{"class": "Advanced English", "prerequisite": ""}
+	{"class": "Advanced English", "prerequisite": ""},
+	{"class": "Advanced Spanish", "prerequisite": "Spanish III"},
+	{"class": "Spanish iii", "prerequisite": "Spanish ii"}
 	],
 	"circularData":
 	[
@@ -33,6 +35,8 @@
 	{"class":"Cooking X", "prerequisite": "Cooking IX"},
 	{"class":"Cooking VIII", "prerequisite": "Cooking VII"},
 	{"class":"Cooking VII", "prerequisite": "Top Chef"},
-	{"class":"Cooking IX", "prerequisite": "Cooking VIII"}
+	{"class":"Cooking IX", "prerequisite": "Cooking VIII"},
+	{"class":"Jewlery IX", "prerequisite": "Jewlery VIII"},
+	{"class":"Jewlery VIII", "prerequisite": "Jewlery IX"}
 	]
 }

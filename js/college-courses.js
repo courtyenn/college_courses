@@ -8,7 +8,7 @@ module.exports = (function(){
 
 		_.each(unparsedString, function(course){
 			var colonlessString = course.split(':');
-			courses.push({"class": colonlessString[0].trim(), "prerequisite": colonlessString[1].trim()});
+			courses.push({"class": colonlessString[0].trim().toLowerCase(), "prerequisite": colonlessString[1].trim().toLowerCase()});
 		});
 
 		return courses;
@@ -22,7 +22,6 @@ function recursiveCourses(courses){
 
 	for(var x = 0; x < courses.length; x++){
 		var isCircular = false;
-		console.log(courses[x]);
 		if(hasPrerequisite(courses[x])){
 			var hasMorePrerequisites = true;
 			var findPrerequisite = courses[x].prerequisite;
